@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxslpoj73u2vj"]
+[gd_scene load_steps=6 format=3 uid="uid://cxslpoj73u2vj"]
 
 [ext_resource type="Script" uid="uid://cxehhwkd86mbt" path="res://Scripts/vehicle.gd" id="1_ak1vr"]
 [ext_resource type="PackedScene" uid="uid://wwjdwvpew2j" path="res://Assets/Models/cars/first_car.blend" id="1_e7e8e"]
+[ext_resource type="Script" uid="uid://d1hicrwq5valv" path="res://Scripts/SpringArmPivot.gd" id="3_gljyk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e7e8e"]
 size = Vector3(5.52297, 1.5401, 2.92575)
@@ -70,3 +71,13 @@ damping_relaxation = 2.0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RearLeft"]
 transform = Transform3D(-4.37114e-08, -0.125542, 0, 1, -5.48763e-09, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_ak1vr")
+
+[node name="SpringArmPivot" type="Node3D" parent="."]
+script = ExtResource("3_gljyk")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31667, 0)
+spring_length = 2.0
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="SpringArmPivot/SpringArm3D"]
