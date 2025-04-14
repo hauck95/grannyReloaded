@@ -20,11 +20,7 @@ func _unhandled_input(event):
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
 
 func _physics_process(_delta):
-	if change_fov_on_run:
-		if owner.is_on_floor():
-			if Input.is_action_pressed("run"):
-				camera.fov = lerp(camera.fov, run_fov, CAMERA_BLEND)
-			else:
-				camera.fov = lerp(camera.fov, normal_fov, CAMERA_BLEND)
-		else:
-			camera.fov = lerp(camera.fov, normal_fov, CAMERA_BLEND)
+	if Input.is_action_pressed("run"):
+		camera.fov = lerp(camera.fov, run_fov, CAMERA_BLEND)
+	else:
+		camera.fov = lerp(camera.fov, normal_fov, CAMERA_BLEND)
