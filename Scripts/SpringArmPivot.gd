@@ -1,7 +1,6 @@
 extends Node3D
 
 @export_group("FOV")
-@export var change_fov_on_run : bool
 @export var normal_fov : float = 75.0
 @export var run_fov : float = 90.0
 

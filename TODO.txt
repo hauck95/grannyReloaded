@@ -7,21 +7,20 @@ IDEAS:
 	- Starter car is just a wheelchair
 
 TODO:
-	- Make granny a walking character
 	- Granny can use car to go
 	- Granny's car has a terminal, its instead of the main menu
 
 DONE:
+	- Make granny a walking character
 	- Make first map
 
-Despription stuff:
 
 Goal of the player:
 	- Survive the map by killing other grannys and take their car
-	
+
 Design:
 	- Fast gameplay, run and shoot
 	- Soviet enviroment, panel, gray and yellow
 	- low poly, grainy shader
-	- 1970's vehicles, Lada, zsiguli, Trabant -> Need a trabant looking car for granny
+	- 1970's vehicles, Lada, zsiguli, Trabant
 	
