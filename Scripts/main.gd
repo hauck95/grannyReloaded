@@ -3,6 +3,7 @@ extends Node3D
 @onready var car_camera: Camera3D = $Car/SpringArmPivot/SpringArm3D/Camera3D
 @onready var player_camera: Camera3D = $Player/SpringArmPivot/SpringArm3D/Camera3D
 @onready var car: VehicleBody3D = $Car
+@onready var player_mesh: Node3D = $Player/player
 
 @export var player_offset_next_to_car = Vector3(0, 0, 2)
 
@@ -18,17 +19,18 @@ func _process(delta: float) -> void:
 	#drive
 	if game_manager.current_state == walking_state and Input.is_action_just_pressed("toggle_driving"):
 		change_player_state(driving_state, true, false)
+		player_sits_in_car()
 	#walk
 	elif game_manager.current_state == driving_state and Input.is_action_just_pressed("toggle_driving"):
 		change_player_state(walking_state, false, true)
 		spawn_player_next_to_object(car)
-
+	
+func player_sits_in_car():
 	if player_is_driving:
-		player.position = car.position
 		player.collision_layer = 0
+		player.position = car.position
 	else:
 		player.collision_layer = 1
-
 
 func change_player_state(new_state: int, car_camera_state: bool, player_camera_state: bool) -> void:
 	game_manager.current_state = new_state

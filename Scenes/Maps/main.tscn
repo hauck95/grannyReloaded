@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dga40q31ykiop"]
+[gd_scene load_steps=7 format=3 uid="uid://dga40q31ykiop"]
 
 [ext_resource type="PackedScene" uid="uid://shvenjd4g4rp" path="res://Assets/Models/Maps/main_map.blend" id="1_pl5p7"]
 [ext_resource type="Script" uid="uid://dudbyhsn40u1s" path="res://Scripts/main.gd" id="1_x0ytm"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_8apfa"]
 [ext_resource type="PackedScene" uid="uid://cxslpoj73u2vj" path="res://Scenes/Cars/car1.tscn" id="4_k8spy"]
+[ext_resource type="PackedScene" uid="uid://6adfxj12xk2y" path="res://Assets/Models/Maps/building/SB-building-1.blend" id="5_ffpv4"]
 
 [sub_resource type="Environment" id="Environment_x0ytm"]
 background_energy_multiplier = 1.95
@@ -15,6 +16,11 @@ adjustment_saturation = 1.84
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_x0ytm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.803857, -0.419869, 0.421337, 0, 0.70834, 0.705872, -0.594823, 0.56742, -0.569404, 0, 107, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 334.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x0ytm")
@@ -28,6 +34,23 @@ run_speed = 8.0
 
 [node name="Car" parent="." instance=ExtResource("4_k8spy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.186, 1.4718, 1.2439)
+
+[node name="Buildings" type="Node3D" parent="."]
+
+[node name="SB-building-1" parent="Buildings" instance=ExtResource("5_ffpv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.1914, 2.89133, 46.7236)
+
+[node name="SB-building-3" parent="Buildings" instance=ExtResource("5_ffpv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.8086, 2.89133, 37.7236)
+
+[node name="SB-building-4" parent="Buildings" instance=ExtResource("5_ffpv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.8086, 2.89133, -21.2764)
+
+[node name="SB-building-2" parent="Buildings" instance=ExtResource("5_ffpv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.1914, 2.89133, -3.28001)
+
+[node name="SB-building-5" parent="Buildings" instance=ExtResource("5_ffpv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.1914, 2.89133, -50.28)
 
 [editable path="Player"]
 [editable path="Car"]

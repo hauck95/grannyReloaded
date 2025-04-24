@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 
 game_manager="*res://Scripts/game_manager.gd"
 
+[display]
+
+window/size/mode=3
+
 [input]
 
 move_left={
