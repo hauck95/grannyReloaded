@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dav7575e721rd"]
+
+[ext_resource type="PackedScene" uid="uid://shvenjd4g4rp" path="res://Assets/Models/Maps/main_map.blend" id="1_odnkj"]
+
+[node name="main_map" type="Node3D"]
+
+[node name="main_map" parent="." instance=ExtResource("1_odnkj")]

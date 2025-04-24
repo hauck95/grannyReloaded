@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dga40q31ykiop"]
+
+[ext_resource type="PackedScene" uid="uid://shvenjd4g4rp" path="res://Assets/Models/Maps/main_map.blend" id="1_pl5p7"]
+[ext_resource type="Script" uid="uid://dudbyhsn40u1s" path="res://Scripts/main.gd" id="1_x0ytm"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_8apfa"]
+[ext_resource type="PackedScene" uid="uid://cxslpoj73u2vj" path="res://Scenes/Cars/car1.tscn" id="4_k8spy"]
+
+[sub_resource type="Environment" id="Environment_x0ytm"]
+background_energy_multiplier = 1.95
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+adjustment_enabled = true
+adjustment_saturation = 1.84
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_x0ytm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x0ytm")
+
+[node name="main_map" parent="." instance=ExtResource("1_pl5p7")]
+
+[node name="Player" parent="." instance=ExtResource("2_8apfa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.8878, 1.05202, 6.39575)
+walk_speed = 4.0
+run_speed = 8.0
+
+[node name="Car" parent="." instance=ExtResource("4_k8spy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.186, 1.4718, 1.2439)
