@@ -9,6 +9,7 @@ radius = 0.423839
 height = 1.8569
 
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 15
 script = ExtResource("1_hn6di")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

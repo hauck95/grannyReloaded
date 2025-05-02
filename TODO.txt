@@ -1,10 +1,15 @@
 (alt + arrow to move line)
-IDEAS:
+OLD_IDEAS:
 	- Granny can shoot other grannys to take their car
 	- Grannys car is getting out of juice, needs to steal others car
 	- Upgrade car and gun
 	- best vehicle is as 50 cc scooter owned by a young guy
 	- Starter car is just a wheelchair
+
+NEWER_IDEAS:
+	-there should be two modes:
+		1. Granny gains speed and health by killing people
+		1. Granny walks around and talks to npc-s, buying stuff, smoking, like in a simulator
 
 TODO:
 	- Granny can use car to go

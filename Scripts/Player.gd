@@ -14,17 +14,17 @@ var speed : float
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot
 
 var walking_state = game_manager.PlayerState.WALKING
-
+var driving_state = game_manager.PlayerState.DRIVING
 
 func _physics_process(delta):
 	if game_manager.current_state == walking_state:
+		self.visible = true
 		var move_direction : Vector3 = Vector3.ZERO
 		move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		move_direction.z = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
 		move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
-
 		velocity.y -= gravity * delta
-
+		
 		if Input.is_action_pressed("run"):
 			speed = run_speed
 		else:
