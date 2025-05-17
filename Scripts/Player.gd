@@ -18,15 +18,15 @@ var walking_state = game_manager.PlayerState.WALKING
 var driving_state = game_manager.PlayerState.DRIVING
 
 func _process(delta: float) -> void:
-	pass
-
-func _physics_process(delta):
-	#animation
-	if velocity > Vector3.ZERO:
+		#animation
+	if velocity and is_on_floor():
 		animation_player.play("Walk")
+	elif velocity and !is_on_floor():
+		animation_player.play("In_air")
 	else:
 		animation_player.play("Idle")
 
+func _physics_process(delta):
 	#player movement
 	if game_manager.current_state == walking_state:
 		self.visible = true

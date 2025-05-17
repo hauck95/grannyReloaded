@@ -31,11 +31,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504423, 3.04961)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0541812, 0.0427268, -0.0118584)
 
 [node name="Skeleton3D" parent="granny/granny-rigged" index="0"]
-bones/6/rotation = Quaternion(2.26189e-07, 5.76012e-08, -0.707107, 0.707107)
-bones/7/rotation = Quaternion(0, 0, 4.57697e-27, 1)
-bones/8/rotation = Quaternion(-4.03897e-28, 0, 4.57539e-27, 1)
-bones/9/rotation = Quaternion(5.76012e-08, -2.26189e-07, 0.707107, 0.707107)
-bones/10/rotation = Quaternion(0, 0, -4.57697e-27, 1)
-bones/11/rotation = Quaternion(-4.03897e-28, 0, -4.57539e-27, 1)
+bones/6/rotation = Quaternion(3.17066e-07, 1.07791e-08, -0.991207, 0.132324)
+bones/7/rotation = Quaternion(-5.0822e-21, 0, -7.45058e-09, 1)
+bones/8/rotation = Quaternion(-5.0822e-21, 4.44089e-16, -7.45058e-09, 1)
+bones/9/rotation = Quaternion(8.07441e-08, -4.23275e-08, 0.991207, 0.132324)
+bones/10/rotation = Quaternion(-1.77636e-15, 1.28786e-14, -2.28927e-27, 1)
+bones/11/rotation = Quaternion(-1.77636e-15, 6.21725e-15, -2.2877e-27, 1)
+
+[node name="AnimationPlayer" parent="granny" index="1"]
+speed_scale = 1.937
 
 [editable path="granny"]
