@@ -10,13 +10,24 @@ var speed : float
 @export var jump_strength : float = 15.0
 @export var gravity : float = 50.0
 
-@onready var player_mesh : Node3D = $player
+@onready var player_mesh : Node3D = $granny
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot
+@onready var animation_player: AnimationPlayer = $granny/AnimationPlayer
 
 var walking_state = game_manager.PlayerState.WALKING
 var driving_state = game_manager.PlayerState.DRIVING
 
+func _process(delta: float) -> void:
+	pass
+
 func _physics_process(delta):
+	#animation
+	if velocity > Vector3.ZERO:
+		animation_player.play("Walk")
+	else:
+		animation_player.play("Idle")
+
+	#player movement
 	if game_manager.current_state == walking_state:
 		self.visible = true
 		var move_direction : Vector3 = Vector3.ZERO

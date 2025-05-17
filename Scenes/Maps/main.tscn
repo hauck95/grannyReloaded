@@ -17,7 +17,7 @@ adjustment_saturation = 1.84
 [node name="main" type="Node3D"]
 script = ExtResource("1_x0ytm")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.803857, -0.419869, 0.421337, 0, 0.70834, 0.705872, -0.594823, 0.56742, -0.569404, 0, 107, 0)
 shadow_enabled = true
 directional_shadow_max_distance = 334.0
@@ -28,7 +28,7 @@ environment = SubResource("Environment_x0ytm")
 [node name="main_map" parent="." instance=ExtResource("1_pl5p7")]
 
 [node name="Player" parent="." instance=ExtResource("2_8apfa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1122, 1.05202, 18.3958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1122, 0.05202, -24.6042)
 walk_speed = 4.0
 run_speed = 8.0
 
@@ -36,7 +36,6 @@ run_speed = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.814, 0.4718, 22.2439)
 
 [node name="ParkingCar" parent="." instance=ExtResource("5_ffpv4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -16)
 
-[editable path="Player"]
 [editable path="Car"]
