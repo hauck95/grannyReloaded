@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://w6tyhkw0wukc"]
+
+[ext_resource type="PackedScene" uid="uid://6adfxj12xk2y" path="res://Assets/Models/Maps/building/SB-building-1.blend" id="1_2k2fq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2k2fq"]
+size = Vector3(24, 7.34839, 39.7939)
+
+[node name="building" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 13
+
+[node name="SB-building-1" parent="." instance=ExtResource("1_2k2fq")]
+
+[node name="collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.825806, -8.39697)
+shape = SubResource("BoxShape3D_2k2fq")

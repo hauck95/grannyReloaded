@@ -4,6 +4,7 @@ extends Node3D
 @onready var player_camera: Camera3D = $Player/SpringArmPivot/SpringArm3D/Camera3D
 @onready var car: VehicleBody3D = $Car
 @onready var player_mesh: Node3D = $Player/player
+@onready var animation_player: AnimationPlayer = $granymation/AnimationPlayer
 
 @export var player_offset_next_to_car = Vector3(0, 0, 2)
 
@@ -14,6 +15,7 @@ var player_is_driving: bool
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("quit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func _process(delta: float) -> void:
 	#drive

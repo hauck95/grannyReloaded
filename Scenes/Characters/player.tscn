@@ -2,17 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dqhlmpm0jdyj7" path="res://Scripts/Player.gd" id="1_hn6di"]
 [ext_resource type="Script" uid="uid://d1hicrwq5valv" path="res://Scripts/SpringArmPivot.gd" id="2_f8ihf"]
-[ext_resource type="PackedScene" uid="uid://dmtsc66gnm42o" path="res://Assets/Models/Characters/player.blend" id="3_al8ar"]
+[ext_resource type="PackedScene" uid="uid://cfosyj3gx3hkv" path="res://Assets/Models/Characters/granny.blend" id="3_al8ar"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6p7c"]
 radius = 0.423839
-height = 1.8569
+height = 1.8131
 
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 15
 script = ExtResource("1_hn6di")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.708921, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.883579, 0)
 shape = SubResource("CapsuleShape3D_k6p7c")
 
 [node name="SpringArmPivot" type="Node3D" parent="."]
@@ -20,10 +21,21 @@ script = ExtResource("2_f8ihf")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31667, 0)
-spring_length = 2.0
+spring_length = 3.0
 margin = 0.2
 
 [node name="Camera3D" type="Camera3D" parent="SpringArmPivot/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504423, 3.04961)
 
-[node name="player" parent="." instance=ExtResource("3_al8ar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446905, 0)
+[node name="granny" parent="." instance=ExtResource("3_al8ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0541812, 0.0427268, -0.0118584)
+
+[node name="Skeleton3D" parent="granny/granny-rigged" index="0"]
+bones/6/rotation = Quaternion(2.26189e-07, 5.76012e-08, -0.707107, 0.707107)
+bones/7/rotation = Quaternion(0, 0, 4.57697e-27, 1)
+bones/8/rotation = Quaternion(-4.03897e-28, 0, 4.57539e-27, 1)
+bones/9/rotation = Quaternion(5.76012e-08, -2.26189e-07, 0.707107, 0.707107)
+bones/10/rotation = Quaternion(0, 0, -4.57697e-27, 1)
+bones/11/rotation = Quaternion(-4.03897e-28, 0, -4.57539e-27, 1)
+
+[editable path="granny"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3ciw2x311q64"]
+
+[ext_resource type="Script" uid="uid://bw3uk27xf1xeq" path="res://Scripts/parking_car.gd" id="1_e2i8y"]
+[ext_resource type="PackedScene" uid="uid://c85ygj38msisp" path="res://Assets/Models/Maps/Parking_car.blend" id="1_g067g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g067g"]
+size = Vector3(3.46194, 1.68967, 1.8681)
+
+[node name="ParkingCar" type="RigidBody3D"]
+collision_layer = 16
+collision_mask = 15
+mass = 0.008
+script = ExtResource("1_e2i8y")
+
+[node name="Parking_car" parent="." instance=ExtResource("1_g067g")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0208893, 0.930984, -0.011322)
+shape = SubResource("BoxShape3D_g067g")
